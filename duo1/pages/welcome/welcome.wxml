@@ -1,0 +1,7 @@
+<view class="container">
+  <image class="user-avatar" src="/img/fushi.jpg"></image>
+  <text class="user-name">hello, XXX</text>
+  <view class="moto-container" bindtap="onTap">
+    <text class="moto">欢迎进入</text>
+  </view>
+</view>

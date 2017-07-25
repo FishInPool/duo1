@@ -1,0 +1,8 @@
+<import src="../star/star-template.wxml"/>
+<template name="bookTemplate">
+  <view class="book-container">
+    <image class="book-img" src="{{coverImg}}" mode="aspectFill"></image>
+    <text class="book-title">{{title}}</text>
+    <template is="starTemplate" data="{{average,stars}}"></template>
+  </view>
+</template>

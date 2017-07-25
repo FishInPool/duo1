@@ -1,0 +1,42 @@
+/* pages/tujian-family/detail/detail.wxss */
+page {
+  background-color: #666;
+  color:#fff;
+  margin: 0;
+  padding:0;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 50rpx;
+}
+.title-container image {
+  width: 60vw;height:60vw;
+  border: 1px solid #fff;
+}
+.speName {
+  margin-top: 30rpx;
+  font-size: 38rpx;
+}
+.fgName {
+  font-size: 32rpx;
+  margin-bottom: 15rpx;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width:90vw;
+  margin:10rpx auto;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.content text{
+  margin-top:25rpx;
+}
+.hr {
+  width:90vw;
+  height:1px;
+  margin:0 auto;margin-top:30rpx;margin-bottom: 10rpx;
+  background-color: #e5e5e5;
+}

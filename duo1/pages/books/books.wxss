@@ -1,0 +1,5 @@
+@import "book/book-template.wxss";
+
+page {
+  background-color: #ededed;
+}

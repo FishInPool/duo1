@@ -1,0 +1,24 @@
+@import "../star/star-template.wxss";
+
+.book-container {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin:25rpx 10rpx 30rpx 32rpx;
+  width: 200rpx;
+}
+
+.book-img {
+  width: 200rpx;
+  height: 289rpx;
+  border:1rpx solid #666;
+  margin-bottom: 15rpx;
+}
+.book-title {
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+  width: 200rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,36 @@
+
+page {
+  background-color: #def3d8;
+}
+.container {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.user-avatar {
+  width:200rpx;
+  height:200rpx;
+  border-radius: 50%;
+  border:1px solid #000;
+  margin-top:160rpx;
+}
+.user-name {
+  margin-top:100rpx;
+  font-size:32rpx;
+  font-weight:bold;
+}
+.moto {
+  font-size:24rpx;
+  letter-spacing:3rpx;
+  font-weight:bold;
+  line-height: 80rpx;
+}
+.moto-container {
+  margin-top:200rpx;
+  border:1px solid #69942f;
+  border-radius: 5px;
+  width:200rpx;height:80rpx;
+  text-align: center;
+  color:#69942f;
+}

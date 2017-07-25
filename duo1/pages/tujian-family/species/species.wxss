@@ -1,0 +1,3 @@
+/* pages/tujian-family/species/species.wxss */
+@import "../tujian-family.wxss";
+@import "../family-item/family-item-temp.wxss";

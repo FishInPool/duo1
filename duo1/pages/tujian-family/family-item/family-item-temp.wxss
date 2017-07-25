@@ -1,0 +1,16 @@
+
+.family {
+  float: left;
+  width:225rpx;height: 285rpx;
+  margin:12rpx;
+  text-align: center;
+}
+.family image {
+  width: 200rpx;height:200rpx;
+  border:1px solid #666666;
+  border-radius: 50%;
+}
+.family text {
+  margin-top:10rpx;
+  font-size: 28rpx;
+}

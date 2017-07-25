@@ -1,0 +1,12 @@
+<view>
+  <view class="tt">
+    <text>--- 属 Genus ---</text>
+  </view>
+  <block wx:for="{{genKey}}" wx:for-item="item">
+    <view class="family" catchtap="toSpecies" data-gen-id="{{item.genId}}">
+      <image src="{{item.genImg}}"></image>
+      <text>{{item.genName}}</text>
+    </view>
+  </block>
+  
+</view>

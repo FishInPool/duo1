@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/tujian-family/tujian-family",
+    "pages/welcome/welcome",
+    "pages/tujian-family/detail/detail",
+    "pages/tujian-family/species/species",
+    "pages/tujian-family/genus/genus",
+    "pages/books/books"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#8bc34a"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "/img/tujian_icon_normal.png",
+        "selectedIconPath": "/img/tujian_icon_pressed.png",
+        "pagePath": "pages/tujian-family/tujian-family",
+        "text": "图鉴"
+      },
+      {
+        "iconPath": "/img/faxian_icon_normal.png",
+        "selectedIconPath": "/img/faxian_icon_pressed.png",
+        "pagePath": "pages/books/books",
+        "text": "发现"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+<import src="book/book-template.wxml"/>
+<view class="classname">
+  <loading hidden="{{hidden}}">
+        加载中...
+    </loading>
+  <block wx:for="{{books}}" wx:for-item="book">
+    <template is="bookTemplate" data="{{...book}}"></template>
+  </block>
+</view>

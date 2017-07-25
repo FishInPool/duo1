@@ -1,0 +1,13 @@
+<view>
+  <view class="title-container">
+    <text class="speName">{{speName}}</text>
+    <text class="fgName">{{familyName}}  {{genName}}</text>
+    <image src="{{speImg}}" mode="aspectFit"></image>
+  </view>
+  <view class="content">
+    <text>{{speCon}}</text>
+    <view class="hr"></view>
+    <text>日照时间：每日 {{tim}} 小时</text>
+    <text>所需水分：每月浇水 {{water}} 次</text>
+  </view>
+</view>
