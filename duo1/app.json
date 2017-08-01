@@ -1,11 +1,15 @@
 {
   "pages": [
+    
     "pages/tujian-family/tujian-family",
     "pages/welcome/welcome",
     "pages/tujian-family/detail/detail",
     "pages/tujian-family/species/species",
     "pages/tujian-family/genus/genus",
-    "pages/books/books"
+    "pages/books/books",
+    "pages/books/book-detail/book-detail",
+    "pages/books/search/search"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#8bc34a"
