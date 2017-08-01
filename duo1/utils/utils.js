@@ -1,6 +1,6 @@
 function starsArray(stars) {
   var num = (stars / 2).toString().substr(0, 3);
-  num=parseFloat(num);
+  num = parseFloat(num);
   var arr = [];
   for (var i = 1; i <= 5; i++) {
     if (i <= num) {
@@ -14,7 +14,7 @@ function starsArray(stars) {
   return arr;
 }
 
-function http(url,callBack) {
+function http(url, callBack) {
   wx.request({
     url: url,
     method: 'GET',
@@ -22,11 +22,25 @@ function http(url,callBack) {
       'content-type': 'application/xml'
     },
     success: function (res) {
-      callBack(res.data);
+      if (res.data.code == 112) {
+        wx.hideLoading();
+        wx.hideNavigationBarLoading();
+        console.log('被豆瓣屏蔽了');
+        wx.showToast({
+          title: '被豆瓣屏蔽了',
+          image:'/img/info-w.png'
+        })
+        
+      } else {
+        callBack(res.data);
+      }
+    },
+    fail: function (error) {
+      console.log(error);
     }
   })
 }
 
 module.exports = {
-  starsArray,http
+  starsArray, http
 }

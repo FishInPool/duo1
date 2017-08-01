@@ -18,7 +18,5 @@
   margin-bottom: 16rpx;
   font-size: 24rpx;
   width: 200rpx;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
+  height:24rpx;
 }

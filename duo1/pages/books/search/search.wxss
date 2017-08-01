@@ -1,0 +1,2 @@
+@import "../book/book-template.wxss";
+@import "../books.wxss";

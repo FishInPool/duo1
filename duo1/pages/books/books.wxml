@@ -1,9 +1,12 @@
-<import src="book/book-template.wxml"/>
-<view class="classname">
-  <loading hidden="{{hidden}}">
-        加载中...
-    </loading>
-  <block wx:for="{{books}}" wx:for-item="book">
-    <template is="bookTemplate" data="{{...book}}"></template>
-  </block>
+<import src="book/book-template.wxml" />
+<view>
+  <view class="search">
+    <icon type="search" size="13" color="#405f80"/>
+    <input type="text" placeholder="跟二木一起玩多肉" placeholder-style="phclass" bindfocus="onFocus" bindconfirm="onConfirm" confirm-type="search"/>
+  </view>
+  <scroll-view class="scroll-container" scroll-y="true" scroll-y="false" bindscrolltolower="onLower" lower-threshold="0rpx">
+    <block wx:for="{{books}}" wx:for-item="book">
+      <template is="bookTemplate" data="{{...book}}"></template>
+    </block>
+  </scroll-view>
 </view>

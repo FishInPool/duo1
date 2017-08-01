@@ -1,0 +1,56 @@
+<import src="../star/star-template.wxml" />
+
+<view class="container">
+  <image class="head-img" src="{{img}}" mode="aspectFill"></image>
+  <view class="head-img-hover" catchtap="showImg" data-src="{{img}}">
+    <text class="main-title">{{name}}</text>
+    <text class="main-author">{{author}}</text>
+  </view>
+  <image class="coverImg" src="{{img}}" mode="aspectFill"  catchtap="showImg" data-src="{{img}}"></image>
+  <view class="book-info">
+    <view class="book-name">
+      <text>{{name}}</text>
+    </view>
+    <view class="score">
+      <text>评分：</text>
+      <template is="starTemplate" data="{{average,stars}}"></template>
+    </view>
+    <view class="flex-row">
+      <text class="">作者：{{author}}</text>
+    </view>
+    <view class="">
+      <text class="flex-row">出版社：{{publisher}}</text>
+    </view>
+    <view class="">
+      <text class="flex-row">页数：{{pages}}</text>
+    </view>
+    <view class="">
+      <text class="flex-row">定价：{{price}}</text>
+    </view>
+    <view class="tag-list">
+      <text class="biaoqian">标签：</text>
+      <view class="tags">
+        <block wx:for="{{tags}}" wx:for-item="tag">
+          <text class="tag">{{tag}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="summ">
+    <view class="sumtitle">
+      <text>内容简介</text>
+    </view>
+    <text>{{summary}}</text>
+  </view>
+  <view class="hr"></view>
+  <view class="summ">
+    <view class="sumtitle">
+      <text>目录</text>
+    </view>
+    <text>{{catalog}}</text>
+  </view>
+  <view class="space">
+    <text>----- 内容来自豆瓣阅读 -----</text>
+  </view>
+</view>

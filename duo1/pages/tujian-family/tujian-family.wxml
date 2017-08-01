@@ -1,8 +1,10 @@
 <import src="family-item/family-item-temp.wxml"/>
 <view>
   <swiper indicator-dots="true" autoplay="true" interval="5000">
-    <swiper-item><image src="/img/family/banner_1.jpg"></image></swiper-item>
-    <swiper-item><image src="/img/family/banner_2.jpg"></image></swiper-item>
+    <swiper-item><image src="/img/banner/Banner1.png" mode="aspectFill"></image></swiper-item>
+    <swiper-item><image src="/img/banner/Banner2.png" mode="aspectFill"></image></swiper-item>
+    <swiper-item><image src="/img/banner/Banner3.png" mode="aspectFill"></image></swiper-item>
+    <swiper-item><image src="/img/banner/Banner4.png" mode="aspectFill"></image></swiper-item>
   </swiper>
   <view class="tt">
     <text>--- 科 Family ---</text>

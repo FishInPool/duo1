@@ -2,22 +2,24 @@ var utils = require('../../utils/utils.js');
 var app = getApp();
 
 Page({
-
   data: {
-    hidden: true
+    books: [],
+    totalCount: 0
   },
 
 
   onLoad: function (options) {
-    var defaultUrl = app.globalData.doubanBase + '/v2/book/search?q=' + '多肉' + '&fields=id,title,rating,images&start=0&count=9';
-    //utils.http(defaultUrl, this.processDoubanData);
-    this.updateData(defaultUrl);
+    var defaultUrl = app.globalData.doubanBase + '/v2/book/search?tag=' + '多肉植物' + '&fields=id,title,rating,images&start=0&count=10';
+    this.addData(defaultUrl);
   },
 
-  updateData: function (url) {
-    this.setData({
-      hidden: false
+  addData: function (url) {
+    //页面中间loading
+    wx.showLoading({
+      title: '加载中...',
     });
+    //导航条loading
+    wx.showNavigationBarLoading();
     utils.http(url, this.processDoubanData);
   },
 
@@ -26,6 +28,9 @@ Page({
     for (var idx in bookList.books) {
       var book = bookList.books[idx];
       var title = book.title;
+      if (title.length >= 7) {
+        title = title.substring(0, 7) + "...";
+      }
       var temp = {
         title: title,
         average: book.rating.average,
@@ -35,16 +40,52 @@ Page({
       }
       books.push(temp);
     }
+    wx.hideLoading();
+    wx.hideNavigationBarLoading();
+    if (books.length<=0){
+      wx.showToast({
+        title: '已无更多书目',
+        icon: 'info'
+      })
+    }
+    var count = books.length;
+    var total = this.data.totalCount + count;
+    var totalBooks = this.data.books.concat(books);
     this.setData({
-      books: books,
-      hidden: true
+      books: totalBooks,
+      totalCount: total
     });
+    
   },
+  //到底加载
+  onLower: function (event) {
+    var nextUrl = app.globalData.doubanBase + '/v2/book/search?tag=' + '多肉植物' + '&fields=id,title,rating,images&start=' + (this.data.totalCount + 1) + '&count=10';
+    this.addData(nextUrl);
+  },
+  //搜索框获取到焦点
+  onFocus:function(){
+    
+  },
+
+  //搜索框提交信息
+  onConfirm:function(event){
+    var query =event.detail.value;
+    if(query){
+      wx.navigateTo({
+        url: 'search/search?q='+query
+      })
+    }
+  },
+
+  //去详情页
+  toBook:function(event){
+    wx.navigateTo({
+      url: 'book-detail/book-detail?id=' + event.currentTarget.dataset.id
+    })
+  },
+
   //之前用来从豆瓣获取数据的方法
   getBooksList: function (url) {
-    this.setData({
-      hidden: false
-    });
     var that = this;
     wx.request({
       url: url,
@@ -53,11 +94,11 @@ Page({
         'content-type': 'application/xml'
       },
       success: function (res) {
-        //console.log(res.data);
         that.processDoubanData(res.data);
       }
     })
   },
+
 
   onShareAppMessage: function () {
 

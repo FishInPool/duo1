@@ -1,0 +1,8 @@
+<import src="../book/book-template.wxml" />
+<view>
+  <scroll-view class="scroll-container" scroll-y="true" scroll-y="false" bindscrolltolower="onLower" lower-threshold="0rpx">
+    <block wx:for="{{books}}" wx:for-item="book">
+      <template is="bookTemplate" data="{{...book}}"></template>
+    </block>
+  </scroll-view>
+</view>

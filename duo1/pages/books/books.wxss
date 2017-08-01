@@ -3,3 +3,25 @@
 page {
   background-color: #ededed;
 }
+.scroll-container {
+  height:1300rpx;
+}
+.search {
+  background-color: #f2f2f2;
+  height:80rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.search icon {
+  margin:auto 20rpx auto 20rpx;
+}
+.search input {
+  height:100%;
+  width: 600rpx;
+  font-size: 28rpx;
+}
+.phclass {
+  font-size: 13rpx;
+  color:#ededed;
+}
