@@ -59,7 +59,12 @@ Page({
     var nextUrl = app.globalData.doubanBase + '/v2/book/search?q=' + this.data.q + '&fields=id,title,rating,images&start=' + (this.data.totalCount + 1) + '&count=10';
     this.addData(nextUrl);
   },
-
+  //去详情页
+  toBook: function (event) {
+    wx.navigateTo({
+      url: '../book-detail/book-detail?id=' + event.currentTarget.dataset.id
+    })
+  },
   onShareAppMessage: function () {
 
   }
